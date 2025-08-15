@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Careers - MI6 Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h2>Careers at MI6</h2>
+    </header>
+    <main>
+        <div class="cards">
+            {% for role, location in [('Field Agent- Fe', 'Headquarters'), ('Accounts Officer', 'Headquarters'), ('Ethical Hacker', 'Headquarters'), ('Intelligence Officers-3', 'Regional Offices'), ('Cybersecurity', 'Washington')] %}
+                <div class="card">
+                    <h3>{{ role }}</h3>
+                    <p>Location: {{ location }}</p>
+                    <button>Apply Now</button>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>

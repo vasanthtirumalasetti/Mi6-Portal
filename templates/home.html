@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - MI6 Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="MI6 Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('careers') }}">Careers</a></li>
+                <li><a href="{{ url_for('newsroom') }}">Newsroom</a></li>
+                <li><a href="{{ url_for('mostwanted') }}">Most Wanted</a></li>
+                <li><a href="{{ url_for('missions') }}">Missions</a></li>
+                <li><a href="{{ url_for('hierarchy') }}">Hierarchy</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Welcome, {{ name }}</h2>
+        <p>This is the official MI6 portal. Select a section from the menu.</p>
+    </main>
+    <footer>
+        <p>&copy; MI6 Agency 2024</p>
+    </footer>
+</body>
+</html>
