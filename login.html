@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - MI6 Portal</title>
+  <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="login-box">
+      <img src="static/logo.png" alt="MI6 Logo" class="logo">
+      <h1>Welcome to MI6 Portal</h1>
+      <form id="loginForm">
+        <input type="text" name="username" placeholder="ID Number" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const users = {
+      '1069': { password: '7382676242', name: 'Agent Nikhil' },
+      '1068': { password: '8187896877', name: 'Agent Vasanth' },
+      '1067': { password: '7396348213', name: 'Agent Sri Teja' },
+      '1057': { password: '9346636182', name: 'Agent Ravi' },
+      '1055': { password: '9110793252', name: 'Agent Varun' }
+    };
+
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = e.target.username.value;
+      const password = e.target.password.value;
+      const user = users[username];
+      if (user && user.password === password) {
+        sessionStorage.setItem('agentName', user.name);
+        window.location.href = 'home.html';
+      } else {
+        alert('Invalid credentials');
+      }
+    });
+  </script>
+</body>
+</html>

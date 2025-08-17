@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Careers - MI6 Portal</title>
+  <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+  <header><h2>Careers at MI6</h2></header>
+  <main>
+    <div class="cards">
+      <div class="card"><h3>Field Agent - Fe</h3><p>Location: Headquarters</p><button>Apply Now</button></div>
+      <div class="card"><h3>Accounts Officer</h3><p>Location: Headquarters</p><button>Apply Now</button></div>
+      <div class="card"><h3>Ethical Hacker</h3><p>Location: Headquarters</p><button>Apply Now</button></div>
+      <div class="card"><h3>Intelligence Officers - 3</h3><p>Location: Regional Offices</p><button>Apply Now</button></div>
+      <div class="card"><h3>Cybersecurity</h3><p>Location: Washington</p><button>Apply Now</button></div>
+    </div>
+  </main>
+  <script>
+    if (!sessionStorage.getItem('agentName')) {
+      window.location.href = 'login.html';
+    }
+  </script>
+</body>
+</html>
