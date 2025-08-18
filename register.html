@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register - MI6 Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static\login.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="left-panel">
+      <img src="static/logo.png" alt="MI6 Logo" class="logo">
+      <h1>JOIN THE NETWORK</h1>
+      <p>Register to become an MI6 operative. Your credentials will be reviewed and verified before access is granted to classified operations and mission data.</p>
+    </div>
+
+    <div class="right-panel">
+      <div class="login-wrapper">
+  <h2>Join MI6</h2>
+  <p style="font-size: 14px; color: #333; margin-bottom: 20px;">
+    New agents are recruited through secure channels only. If you believe you have what it takes, send your credentials and intent to join to our operations desk.
+  </p>
+
+  <div class="links" style="margin-bottom: 25px;">
+    <a href="mailto:mi6recruitment@agency.gov.in">Send Mail to MI6 Recruitment</a>
+  </div>
+
+  <button onclick="window.location.href='index.html'">Back to Login</button>
+</div>
+
+    </div>
+  </div>
+
+  <script>
+    const users = {
+      '1069': { password: '7382676242', name: 'Agent Nikhil' },
+      '1068': { password: '8187896877', name: 'Agent Vasanth' },
+      '1067': { password: '7396348213', name: 'Agent Sri Teja' },
+      '1057': { password: '9346636182', name: 'Agent Ravi' },
+      '1055': { password: '9110793252', name: 'Agent Varun' }
+    };
+
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const id = e.target.agentID.value;
+      const name = e.target.agentName.value;
+      const pass = e.target.newPassword.value;
+      const confirm = e.target.confirmPassword.value;
+      const accepted = document.getElementById('terms').checked;
+
+      if (!accepted) {
+        alert('You must accept the terms to proceed.');
+        return;
+      }
+
+      if (pass !== confirm) {
+        alert('Passwords do not match.');
+        return;
+      }
+
+      if (users[id]) {
+        alert('Agent ID already exists.');
+        return;
+      }
+
+      users[id] = { password: pass, name: name };
+      alert('Registration successful. Welcome, ' + name + '!');
+      window.location.href = 'index.html';
+    });
+  </script>
+
+</body>
+</html>
