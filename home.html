@@ -3,34 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <title>Home - MI6 Portal</title>
-  <link rel="stylesheet" href="static/styles.css">
+  <link rel="stylesheet" href="static\css\styles.css">
   
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <img src="static/logo.png" alt="MI6 Logo" class="logo">
-    <nav>
-      <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="careers.html">Careers</a></li>
-        <li><a href="newsroom.html">Newsroom</a></li>
-        <li><a href="mostwanted.html">Most Wanted</a></li>
-        <li><a href="missions.html">Missions</a></li>
-        <li><a href="hierarchy.html">Hierarchy</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div id="header"></div>
+
   <main>
     <h2>Welcome, <span id="agentName">Agent</span></h2>
     <p>This is the official MI6 portal. Select a section from the menu.</p>
     <button onclick="logout()">Logout</button>
   </main>
-  <footer>
-    <p>&copy; MI6 Agency 2024</p>
-  </footer>
+  <div id="footer"></div>
+  <script src="static/js/layout.js"></script>
 
-  <script>
+  <!-- <script>
     const name = sessionStorage.getItem('agentName');
     if (name) {
       document.getElementById('agentName').textContent = name;
@@ -42,6 +30,6 @@
       sessionStorage.clear();
       window.location.href = 'login.html';
     }
-  </script>
+  </script> -->
 </body>
 </html>
